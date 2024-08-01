@@ -63,5 +63,6 @@ packagesYay=(
     "trizen"
     "pacseek"
     "visual-studio-code-bin"
-    "google-chrome-wayland-vulkan"
+    "google-chrome"
+    "linux-wifi-hotspot"
 );

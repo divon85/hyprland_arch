@@ -1,0 +1,160 @@
+{
+    //   "layer": "top",
+    //   "position": "top",
+      "height": 24,
+      "spacing": 4,
+      "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window",
+        "custom/updates"
+      ],
+      "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "battery",
+        "network",
+        "group/hardware",
+        "custom/cliphist",
+        "tray",
+        "custom/exit",
+        "clock"
+      ],
+      "hyprland/workspaces" : {
+          "on-click": "activate",
+          "active-only": false,
+          "all-outputs": true,
+          "format": "{}",
+          "format-icons": {
+        "urgent": "",
+        "active": "",
+        "default": ""
+          },
+          "persistent-workspaces": {
+              "*": 1
+          }       
+      },
+      "custom/updates": {
+        "format": "  {}",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",       
+        "exec": "~/.config/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "alacritty --class dotfiles-floating -e ~/.config/scripts/installupdates.sh",
+        "on-click-right": "~/.config/.settings/software.sh",
+        "tooltip": false
+      },
+      "hyprland/window": {
+          "rewrite": {
+              "(.*) - Brave": "$1",
+              "(.*) - Chromium": "$1",
+              "(.*) - Brave Search": "$1",
+              "(.*) - Outlook": "$1",
+              "(.*) Microsoft Teams": "$1"
+          },
+          "separate-outputs": true
+      },
+      "pulseaudio": {
+          "format": "{icon}  {volume}%",
+          "format-bluetooth": "{volume}% {icon} {format_source}",
+          "format-bluetooth-muted": " {icon} {format_source}",
+          "format-muted": " {format_source}",
+          "format-source": "{volume}% ",
+          "format-source-muted": "",
+          "format-icons": {
+              "headphone": " ",
+              "hands-free": " ",
+              "headset": " ",
+              "phone": " ",
+              "portable": " ",
+              "car": " ",
+              "default": [" ", " ", " "]
+          },
+          "on-click": "pavucontrol"
+      },
+      "bluetooth": {
+          "format": " {status}",
+          "format-disabled": "",
+          "format-off": "",
+          "interval": 30,
+          "on-click": "blueman-manager",
+          "format-no-controller": ""
+      },
+      "battery": {
+          "states": {
+              "warning": 30,
+              "critical": 15
+          },
+          "format": "{icon}   {capacity}%",
+          "format-charging": "  {capacity}%",
+          "format-plugged": "  {capacity}%",
+          "format-alt": "{icon}  {time}",
+          "format-icons": [" ", " ", " ", " ", " "]
+      },
+      "network": {
+          "format": "{ifname}",
+          "format-wifi": "   {signalStrength}%",
+          "format-ethernet": "  {ifname}",
+          "format-disconnected": "Disconnected",
+          "tooltip-format": " {ifname} via {gwaddri}",
+          "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+          "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+          "tooltip-format-disconnected": "Disconnected",
+          "max-length": 50,
+          "on-click": "~/dotfiles/.settings/networkmanager.sh"
+      },
+      "custom/system": {
+          "format": "",
+          "tooltip": false
+      },
+      "cpu": {
+          "format": "/ C {usage}% ",
+          "on-click": "alacritty -e htop"
+      },
+      "memory": {
+          "format": "/ M {}% ",
+          "on-click": "alacritty -e htop"
+      },
+      "disk": {
+          "interval": 30,
+          "format": "D {percentage_used}% ",
+          "path": "/",
+          "on-click": "alacritty -e htop"
+      },
+      "group/hardware": {
+          "orientation": "inherit",
+          "drawer": {
+              "transition-duration": 300,
+              "children-class": "not-memory",
+              "transition-left-to-right": false
+          },        
+          "modules": [
+              "custom/system",
+              "disk",
+              "cpu",
+              "memory"
+          ]
+      },
+      "custom/cliphist": {
+          "format": "",
+          "on-click": "sleep 0.1 && ~/.config/scripts/cliphist.sh",
+          "on-click-right": "sleep 0.1 && ~/.config/scripts/cliphist.sh d",
+          "on-click-middle": "sleep 0.1 && ~/.config/scripts/cliphist.sh w",
+          "tooltip": false
+      },
+      "tray": {
+          "icon-size": 21,
+          "spacing": 10
+      },
+      "custom/exit": {
+          "format": "",
+          "on-click": "wlogout",
+          "tooltip": false
+      },
+      "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S %a}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+      }
+    }

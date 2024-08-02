@@ -95,6 +95,11 @@ source install/displaymanager.sh
 source install/issue.sh
 
 # ----------------------------------------------------- 
+# Check installation of neovim
+# ----------------------------------------------------- 
+source install/neovim.sh
+
+# ----------------------------------------------------- 
 # Copy files to target directory
 # ----------------------------------------------------- 
 source install/copy.sh

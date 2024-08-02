@@ -17,7 +17,7 @@ if [ ! -d ~/Pictures/wallpaper ]; then
         fi
         git clone --depth 1 https://github.com/mylinuxforwork/wallpaper.git ~/Downloads/wallpaper
         if [ ! -d ~/Pictures/wallpaper/ ]; then
-            mkdir ~/wallpaper
+            mkdir ~/Pictures/wallpaper
         fi
         rsync -a -I --exclude-from=install/includes/excludes.txt ~/Downloads/wallpaper/. ~/Pictures/wallpaper/
         echo "Wallpapers from the repository installed successfully."
@@ -25,9 +25,9 @@ if [ ! -d ~/Pictures/wallpaper ]; then
         exit 130
     else
         if [ -d ~/Pictures/wallpaper/ ]; then
-            echo "~/wallpaper folder already exists."
+            echo "~/Pictures/wallpaper folder already exists."
         else
-            mkdir ~/wallpaper
+            mkdir ~/Pictures/wallpaper
         fi
         cp install/wallpapers/* ~/Pictures/wallpaper
         echo "Default wallpapers installed successfully."

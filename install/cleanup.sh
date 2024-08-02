@@ -32,8 +32,10 @@ else
 fi
 
 # Replace pfetch and neofetch with fastfetch
-sed -i "s/pfetch/fastfetch/g" ~/dotfiles/.bashrc
-sed -i "s/neofetch/fastfetch/g" ~/dotfiles/.bashrc
+cp ~/.config-versions/$version/.bashrc ~/.bashrc
+rm ~/.config-versions/$version/.bashrc
+sed -i "s/pfetch/fastfetch/g" ~/.bashrc
+sed -i "s/neofetch/fastfetch/g" ~/.bashrc
 
 # Create default folder structure
 xdg-user-dirs-update

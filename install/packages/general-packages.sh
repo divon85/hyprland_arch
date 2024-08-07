@@ -65,4 +65,5 @@ packagesYay=(
     "visual-studio-code-bin"
     "google-chrome"
     "linux-wifi-hotspot"
+    "retroarch-git"
 );

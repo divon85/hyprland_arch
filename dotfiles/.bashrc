@@ -23,9 +23,9 @@ alias lt='eza -a --tree --level=1 --icons'
 alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias vim='$EDITOR'
-alias ts='~/.dotfiles/scripts/snapshot.sh'
+alias ts='~/.config/scripts/snapshot.sh'
 alias wifi='nmtui'
-alias rw='~/.dotfiles/waybar/reload.sh'
+alias rw='~/.config/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/.dotfiles"
 alias cleanup='~/.dotfiles/scripts/cleanup.sh'
@@ -54,20 +54,14 @@ alias gcredential="git config credential.helper store"
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
-alias confq='$EDITOR ~/.dotfiles/qtile/config.py'
-alias confp='$EDITOR ~/.dotfiles/picom/picom.conf'
-alias confb='$EDITOR ~/.dotfiles/.bashrc'
+alias confp='$EDITOR ~/.config/picom/picom.conf'
+alias confb='$EDITOR ~/.bashrc'
 
 # -----------------------------------------------------
 # EMACS
 # -----------------------------------------------------
 
 export PATH="$HOME/.config/emacs/bin:$PATH"
-
-# -----------------------------------------------------
-# DEVELOPMENT
-# -----------------------------------------------------
-alias dotsync="~/.dotfiles-versions/dotfiles/.dev/sync.sh dotfiles"
 
 # -----------------------------------------------------
 # START STARSHIP
@@ -99,4 +93,4 @@ export PATH="$HOME/.texlive/2024/bin/x86_64-linux:$PATH"
 alias exlatex='pdflatex main.tex'
 
 # Miniconda
-alias phdenv='source ~/.miniconda3/bin/activate && conda activate PhD'
+alias phdenv='source ~/.miniconda/bin/activate && conda activate PhD'

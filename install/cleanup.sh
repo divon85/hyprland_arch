@@ -32,8 +32,8 @@ else
 fi
 
 # Replace pfetch and neofetch with fastfetch
-cp ~/.config-versions/$version/.bashrc ~/.bashrc
-rm ~/.config-versions/$version/.bashrc
+cp ~/.backup-versions/$version/.bashrc ~/.bashrc
+rm ~/.backup-versions/$version/.bashrc
 sed -i "s/pfetch/fastfetch/g" ~/.bashrc
 sed -i "s/neofetch/fastfetch/g" ~/.bashrc
 

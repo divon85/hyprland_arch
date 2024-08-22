@@ -4,7 +4,7 @@
 echo -e "${GREEN}"
 figlet "Wallpapers"
 if [ ! -d ~/Pictures ]; then
-    mkdir Pictures
+    mkdir ~/Pictures
 fi
 echo -e "${NONE}"
 if [ ! -d ~/Pictures/wallpaper ]; then

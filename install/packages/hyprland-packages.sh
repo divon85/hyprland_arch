@@ -15,7 +15,6 @@ packagesYay=(
     "nwg-look"
     "hyprshade"
     "waypaper"
-    "mission-center"
     "grimblast"
     "bun-bin"
     "aylurs-gtk-shell"
